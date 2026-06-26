@@ -1,3 +1,34 @@
+// Animation d'ouverture (enveloppe & cachet)
+const envelopeIntro = document.getElementById('envelope-intro');
+
+if (envelopeIntro) {
+  document.body.classList.add('no-scroll');
+  let opened = false;
+
+  const openEnvelope = () => {
+    if (opened) return;
+    opened = true;
+    envelopeIntro.classList.add('is-opening');
+
+    setTimeout(() => {
+      envelopeIntro.classList.add('is-hidden');
+      document.body.classList.remove('no-scroll');
+    }, 750);
+
+    setTimeout(() => {
+      envelopeIntro.remove();
+    }, 1400);
+  };
+
+  envelopeIntro.addEventListener('click', openEnvelope);
+  envelopeIntro.addEventListener('keydown', (event) => {
+    if (event.key === 'Enter' || event.key === ' ') {
+      event.preventDefault();
+      openEnvelope();
+    }
+  });
+}
+
 // Compte à rebours jusqu'au mariage
 const WEDDING_DATE = new Date('2026-08-22T16:00:00+02:00');
 
@@ -32,7 +63,7 @@ setInterval(updateCountdown, 1000);
 
 // Apparition au scroll
 const revealTargets = document.querySelectorAll(
-  '.time-block, .timeline-item, .info-card, .map-wrap, .rsvp-form'
+  '.time-block, .timeline-item, .info-card, .venue-photo, .map-wrap, .rsvp-form'
 );
 revealTargets.forEach((el) => el.classList.add('reveal'));
 

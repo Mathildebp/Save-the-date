@@ -12,6 +12,22 @@
 </head>
 <body>
 
+<div class="envelope-intro" id="envelope-intro" role="button" tabindex="0" aria-label="Ouvrir l'invitation">
+  <div class="envelope">
+    <div class="envelope-body"></div>
+    <div class="envelope-flap"></div>
+    <div class="envelope-seal">
+      <span>M&amp;G</span>
+    </div>
+  </div>
+  <p class="envelope-hint">Touchez le cachet pour ouvrir votre invitation</p>
+</div>
+<noscript>
+  <style>
+    .envelope-intro { display: none !important; }
+  </style>
+</noscript>
+
 <div class="bg-texture"></div>
 
 <header class="hero" id="accueil">
@@ -141,11 +157,16 @@
         <h3>Hébergement</h3>
         <p>Quelques pistes pour dormir à proximité :</p>
         <ul class="info-links">
-          <li><a href="https://www.airbnb.com/eygurande-et-gardedeuil-france/stays" target="_blank" rel="noopener">Locations Airbnb à Eygurande-et-Gardedeuil</a></li>
-          <li><a href="https://www.dordogne-perigord-tourisme.fr/preparer-son-sejour/ou-dormir/gites-locations-vacances/gites-et-location-eygurande-et-gardedeuil/" target="_blank" rel="noopener">Gîtes & chambres d'hôtes (Dordogne Périgord Tourisme)</a></li>
+          <li><a href="https://www.airbnb.com/eygurande-et-gardedeuil-france/stays" target="_blank" rel="noopener">Hébergements à proximité (Airbnb)</a></li>
+          <li><a href="https://www.booking.com/city/fr/eygurande-et-gardedeuil.html" target="_blank" rel="noopener">Hôtels & gîtes à proximité (Booking.com)</a></li>
         </ul>
       </div>
     </div>
+
+    <figure class="venue-photo">
+      <img src="assets/maison.jpg" alt="La maison où aura lieu la réception, à Eygurande-et-Gardedeuil" loading="lazy">
+      <figcaption>Notre maison, là où tout se passera 🏡</figcaption>
+    </figure>
 
     <div class="map-wrap">
       <iframe
