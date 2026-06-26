@@ -394,6 +394,28 @@ section {
   margin: 0;
 }
 
+.info-links {
+  list-style: none;
+  margin: 10px 0 0;
+  padding: 0;
+  text-align: left;
+}
+
+.info-links li {
+  margin-top: 8px;
+}
+
+.info-links a {
+  font-size: 0.85rem;
+  color: var(--terracotta-dark);
+  text-decoration: underline;
+  text-decoration-color: var(--dusty-rose);
+}
+
+.info-links a:hover {
+  color: var(--terracotta);
+}
+
 .map-wrap {
   border-radius: 18px;
   overflow: hidden;
