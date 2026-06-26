@@ -13,11 +13,11 @@ if (envelopeIntro) {
     setTimeout(() => {
       envelopeIntro.classList.add('is-hidden');
       document.body.classList.remove('no-scroll');
-    }, 750);
+    }, 850);
 
     setTimeout(() => {
       envelopeIntro.remove();
-    }, 1400);
+    }, 1500);
   };
 
   envelopeIntro.addEventListener('click', openEnvelope);
