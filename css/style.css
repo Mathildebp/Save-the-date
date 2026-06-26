@@ -482,12 +482,52 @@ section {
   margin-top: 6px;
 }
 
+.rsvp-form .btn-primary[disabled] {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
 .form-success {
-  max-width: 520px;
-  margin: 24px auto 0;
+  display: none;
+  margin: 22px auto 0;
   font-family: var(--font-script);
   font-size: 1.5rem;
   color: var(--sage-dark);
+  text-align: center;
+}
+
+.form-success[data-fs-active] {
+  display: block;
+}
+
+.form-error-banner {
+  display: none;
+  background: #f6e3dd;
+  color: var(--terracotta-dark);
+  border-radius: 10px;
+  padding: 12px 16px;
+  margin-bottom: 22px;
+  font-size: 0.85rem;
+}
+
+.form-error-banner[data-fs-active] {
+  display: block;
+}
+
+.field-error {
+  display: none;
+  margin-top: 6px;
+  font-size: 0.78rem;
+  color: var(--terracotta-dark);
+}
+
+.field-error[data-fs-active] {
+  display: block;
+}
+
+.form-row input[aria-invalid='true'],
+.form-row textarea[aria-invalid='true'] {
+  border-color: var(--terracotta-dark);
 }
 
 /* ---------- Footer ---------- */

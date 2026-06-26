@@ -10,14 +10,21 @@ Site statique (HTML/CSS/JS, sans build) présentant le mariage du 22 août 2026.
 
 ## Configurer le RSVP
 
-Le formulaire envoie ses réponses via [Formspree](https://formspree.io) (gratuit, sans backend).
+Le formulaire envoie ses réponses via [Formspree](https://formspree.io) (gratuit, sans backend), intégré avec la librairie [`@formspree/ajax`](https://github.com/formspree/formspree-js/tree/master/packages/formspree-ajax) chargée par CDN (pas de bundler nécessaire).
 
-1. Créer un compte sur https://formspree.io
-2. Créer un nouveau formulaire et copier son ID (ressemble à `https://formspree.io/f/xxxxxxxx`)
-3. Dans `index.html`, remplacer `YOUR_FORM_ID` dans l'attribut `action` du `<form id="rsvp-form">` par votre ID
-4. Tester en soumettant le formulaire une première fois (Formspree demande une confirmation d'email pour le premier envoi)
+- Le formulaire est déjà connecté à l'endpoint `https://formspree.io/f/xykqwevr`
+- L'initialisation se trouve en bas de `index.html` :
+  ```html
+  formspree('initForm', {
+    formElement: '#rsvp-form',
+    formId: 'xykqwevr',
+    useDefaultStyles: false,
+  });
+  ```
+- Les messages d'erreur/succès s'affichent via les attributs `data-fs-error` (par champ ou global) et `data-fs-success` directement dans le formulaire ; leur style est défini dans `css/style.css` (`.field-error`, `.form-error-banner`, `.form-success`)
+- Tester en soumettant le formulaire une première fois (Formspree demande une confirmation d'email pour le premier envoi sur un nouveau formulaire)
 
-Si vous préférez un autre service (EmailJS, Web3Forms...), seule la valeur de l'attribut `action` du formulaire est à changer ; le JS dans `js/script.js` poste les données en `FormData` standard.
+Pour changer de formulaire Formspree, remplacer `xykqwevr` à la fois dans l'attribut `action` du `<form>` et dans l'appel `initForm`.
 
 ## Personnaliser
 

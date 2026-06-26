@@ -50,37 +50,4 @@ const observer = new IntersectionObserver(
 
 revealTargets.forEach((el) => observer.observe(el));
 
-// Envoi du formulaire RSVP (Formspree)
-const rsvpForm = document.getElementById('rsvp-form');
-const formSuccess = document.getElementById('form-success');
-
-if (rsvpForm) {
-  rsvpForm.addEventListener('submit', async (event) => {
-    event.preventDefault();
-
-    const submitBtn = rsvpForm.querySelector('button[type="submit"]');
-    submitBtn.disabled = true;
-    submitBtn.textContent = 'Envoi en cours...';
-
-    try {
-      const response = await fetch(rsvpForm.action, {
-        method: 'POST',
-        body: new FormData(rsvpForm),
-        headers: { Accept: 'application/json' },
-      });
-
-      if (response.ok) {
-        rsvpForm.hidden = true;
-        formSuccess.hidden = false;
-      } else {
-        throw new Error('Réponse non valide du serveur');
-      }
-    } catch (err) {
-      submitBtn.disabled = false;
-      submitBtn.textContent = 'Envoyer ma réponse';
-      alert(
-        "Oups, l'envoi a échoué. Vérifiez votre connexion ou réessayez dans quelques instants."
-      );
-    }
-  });
-}
+// La soumission du formulaire RSVP est gérée par @formspree/ajax (voir index.html)
