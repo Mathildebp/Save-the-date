@@ -1,16 +1,16 @@
 :root {
-  --cream: #fbf6ef;
-  --cream-dark: #f3e9dc;
-  --sand: #e7d9c2;
-  --sage: #8a9a7b;
-  --sage-dark: #6c7d5e;
-  --terracotta: #c97d60;
-  --terracotta-dark: #b3654b;
-  --dusty-rose: #d8a7a0;
-  --charcoal: #3e3a36;
-  --charcoal-soft: #5c564f;
+  --cream: #faf8f3;
+  --cream-dark: #f1eee4;
+  --sand: #e6e0d1;
+  --sage: #8a9683;
+  --sage-dark: #6c7a64;
+  --terracotta: #5f6e56;
+  --terracotta-dark: #4a5743;
+  --dusty-rose: #c7ab78;
+  --charcoal: #2e2c28;
+  --charcoal-soft: #6b6862;
 
-  --font-script: 'Caveat', cursive;
+  --font-script: 'Parisienne', cursive;
   --font-heading: 'Cormorant Garamond', serif;
   --font-body: 'Montserrat', sans-serif;
 }
@@ -270,7 +270,7 @@ section {
   border-radius: 16px;
   padding: 22px clamp(16px, 4vw, 28px);
   min-width: 90px;
-  box-shadow: 0 4px 18px rgba(62, 58, 54, 0.06);
+  box-shadow: 0 4px 18px rgba(46, 44, 40, 0.06);
 }
 
 .time-value {
@@ -368,7 +368,7 @@ section {
   background: #fff;
   border-radius: 18px;
   padding: 32px 22px;
-  box-shadow: 0 4px 18px rgba(62, 58, 54, 0.06);
+  box-shadow: 0 4px 18px rgba(46, 44, 40, 0.06);
   transition: transform 0.25s ease;
 }
 
@@ -419,7 +419,7 @@ section {
 .map-wrap {
   border-radius: 18px;
   overflow: hidden;
-  box-shadow: 0 4px 18px rgba(62, 58, 54, 0.08);
+  box-shadow: 0 4px 18px rgba(46, 44, 40, 0.08);
 }
 
 .map-wrap iframe {
@@ -443,7 +443,7 @@ section {
   background: #fff;
   border-radius: 20px;
   padding: clamp(28px, 5vw, 44px);
-  box-shadow: 0 8px 28px rgba(62, 58, 54, 0.08);
+  box-shadow: 0 8px 28px rgba(46, 44, 40, 0.08);
 }
 
 .form-row {
