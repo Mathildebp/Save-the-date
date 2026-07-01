@@ -12,22 +12,6 @@
 </head>
 <body>
 
-<div class="envelope-intro" id="envelope-intro" role="button" tabindex="0" aria-label="Ouvrir l'invitation">
-  <div class="envelope">
-    <div class="envelope-body"></div>
-    <div class="envelope-flap"></div>
-    <div class="envelope-seal">
-      <span>M&amp;G</span>
-    </div>
-  </div>
-  <p class="envelope-hint">Touchez le cachet pour ouvrir votre invitation</p>
-</div>
-<noscript>
-  <style>
-    .envelope-intro { display: none !important; }
-  </style>
-</noscript>
-
 <div class="bg-texture"></div>
 
 <header class="hero" id="accueil">
@@ -45,6 +29,7 @@
     <h1 class="names">Mathilde <span class="amp">&amp;</span> Guillaume</h1>
     <p class="hero-date">22 août 2026</p>
     <p class="hero-place">Eygurande-et-Gardedeuil, Dordogne</p>
+    <span class="hero-divider" aria-hidden="true"></span>
     <a href="#rsvp" class="btn-primary">Confirmer ma présence</a>
   </div>
 
@@ -89,7 +74,7 @@
         <span class="time-label">secondes</span>
       </div>
     </div>
-    <p class="countdown-done" id="countdown-done" hidden>C'est aujourd'hui — on se marie ! 🎉</p>
+    <p class="countdown-done" id="countdown-done" hidden>C'est aujourd'hui — on se marie !</p>
   </section>
 
   <section class="divider" aria-hidden="true">
@@ -143,17 +128,14 @@
 
     <div class="infos-grid">
       <div class="info-card">
-        <span class="info-icon" aria-hidden="true">📍</span>
         <h3>Lieu</h3>
         <p>292 chemin de la petite duche<br>24700 Eygurande-et-Gardedeuil</p>
       </div>
       <div class="info-card">
-        <span class="info-icon" aria-hidden="true">🚗</span>
         <h3>Accès & parking</h3>
         <p>Parking disponible sur place pour tous les invités</p>
       </div>
       <div class="info-card">
-        <span class="info-icon" aria-hidden="true">🏨</span>
         <h3>Hébergement</h3>
         <p>Quelques pistes pour dormir à proximité :</p>
         <ul class="info-links">
@@ -165,7 +147,7 @@
 
     <figure class="venue-photo">
       <img src="assets/maison.jpg" alt="La maison où aura lieu la réception, à Eygurande-et-Gardedeuil" loading="lazy">
-      <figcaption>Notre maison, là où tout se passera 🏡</figcaption>
+      <figcaption>Notre maison, là où tout se passera</figcaption>
     </figure>
 
     <div class="map-wrap">
@@ -209,11 +191,11 @@
         <div class="radio-group">
           <label class="radio-option">
             <input type="radio" name="attending" value="oui" data-fs-field required>
-            <span>Avec joie, j'y serai 🎉</span>
+            <span>Avec joie, j'y serai</span>
           </label>
           <label class="radio-option">
             <input type="radio" name="attending" value="non" data-fs-field required>
-            <span>Je ne pourrai pas venir 💔</span>
+            <span>Je ne pourrai pas venir</span>
           </label>
         </div>
         <span class="field-error" data-fs-error="attending"></span>
@@ -233,7 +215,7 @@
 
       <button type="submit" class="btn-primary" data-fs-submit-btn>Envoyer ma réponse</button>
 
-      <p class="form-success" data-fs-success>Merci infiniment, votre réponse a bien été envoyée ! 💛</p>
+      <p class="form-success" data-fs-success>Merci infiniment, votre réponse a bien été envoyée !</p>
     </form>
   </section>
 
