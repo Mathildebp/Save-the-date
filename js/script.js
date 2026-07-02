@@ -30,11 +30,26 @@ function updateCountdown() {
 updateCountdown();
 setInterval(updateCountdown, 1000);
 
-// Apparition au scroll
+// Nav : verre dépoli une fois qu'on a quitté le haut de page
+const nav = document.querySelector('.nav');
+function updateNav() {
+  if (nav) nav.classList.toggle('nav--scrolled', window.scrollY > 40);
+}
+window.addEventListener('scroll', updateNav, { passive: true });
+updateNav();
+
+// Apparition au scroll, en cascade au sein de chaque groupe
 const revealTargets = document.querySelectorAll(
   '.time-block, .timeline-item, .info-card, .venue-photo, .map-wrap, .rsvp-form'
 );
-revealTargets.forEach((el) => el.classList.add('reveal'));
+const revealGroups = new Map();
+revealTargets.forEach((el) => {
+  el.classList.add('reveal');
+  const group = el.parentElement;
+  const index = revealGroups.get(group) || 0;
+  el.style.transitionDelay = `${Math.min(index * 90, 450)}ms`;
+  revealGroups.set(group, index + 1);
+});
 
 const observer = new IntersectionObserver(
   (entries) => {
@@ -49,5 +64,34 @@ const observer = new IntersectionObserver(
 );
 
 revealTargets.forEach((el) => observer.observe(el));
+
+// Parallaxe douce sur la bande photo
+const strip = document.querySelector('.photo-strip');
+const stripImg = strip ? strip.querySelector('img') : null;
+const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+
+if (stripImg && !reducedMotion.matches) {
+  let ticking = false;
+  function applyParallax() {
+    const rect = strip.getBoundingClientRect();
+    if (rect.bottom > 0 && rect.top < window.innerHeight) {
+      const progress =
+        (rect.top + rect.height / 2 - window.innerHeight / 2) / window.innerHeight;
+      stripImg.style.transform = `translateY(${(-progress * 40).toFixed(1)}px)`;
+    }
+    ticking = false;
+  }
+  window.addEventListener(
+    'scroll',
+    () => {
+      if (!ticking) {
+        ticking = true;
+        requestAnimationFrame(applyParallax);
+      }
+    },
+    { passive: true }
+  );
+  applyParallax();
+}
 
 // La soumission du formulaire RSVP est gérée par @formspree/ajax (voir index.html)

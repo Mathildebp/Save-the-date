@@ -79,7 +79,8 @@
   </section>
 
   <div class="photo-strip" aria-hidden="true">
-    <img src="assets/couple-hands.jpg" alt="">
+    <img src="assets/couple-hands.jpg" alt="" loading="lazy">
+    <p class="photo-strip-caption">À l'amour, à la vie</p>
   </div>
 
   <section class="programme" id="programme">
@@ -175,13 +176,13 @@
 
       <div class="form-row">
         <label for="name">Nom et prénom</label>
-        <input type="text" id="name" name="name" data-fs-field required>
+        <input type="text" id="name" name="name" data-fs-field autocomplete="name" required>
         <span class="field-error" data-fs-error="name"></span>
       </div>
 
       <div class="form-row">
         <label for="email">Adresse email</label>
-        <input type="email" id="email" name="email" data-fs-field required>
+        <input type="email" id="email" name="email" data-fs-field autocomplete="email" required>
         <span class="field-error" data-fs-error="email"></span>
       </div>
 
