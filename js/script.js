@@ -30,13 +30,34 @@ function updateCountdown() {
 updateCountdown();
 setInterval(updateCountdown, 1000);
 
-// Nav : verre dépoli une fois qu'on a quitté le haut de page
+// Nav : verre dépoli une fois qu'on a quitté le haut de page (ou menu ouvert)
 const nav = document.querySelector('.nav');
 function updateNav() {
-  if (nav) nav.classList.toggle('nav--scrolled', window.scrollY > 40);
+  if (!nav) return;
+  const open = nav.classList.contains('nav-open');
+  nav.classList.toggle('nav--scrolled', window.scrollY > 40 || open);
 }
 window.addEventListener('scroll', updateNav, { passive: true });
 updateNav();
+
+// Menu burger mobile
+const navToggle = document.querySelector('.nav-toggle');
+if (nav && navToggle) {
+  navToggle.addEventListener('click', () => {
+    const open = nav.classList.toggle('nav-open');
+    navToggle.setAttribute('aria-expanded', String(open));
+    navToggle.setAttribute('aria-label', open ? 'Fermer le menu' : 'Ouvrir le menu');
+    updateNav();
+  });
+  nav.querySelectorAll('.nav-links a').forEach((link) => {
+    link.addEventListener('click', () => {
+      nav.classList.remove('nav-open');
+      navToggle.setAttribute('aria-expanded', 'false');
+      navToggle.setAttribute('aria-label', 'Ouvrir le menu');
+      updateNav();
+    });
+  });
+}
 
 // Apparition au scroll, en cascade au sein de chaque groupe
 const revealTargets = document.querySelectorAll(
@@ -92,6 +113,19 @@ if (stripImg && !reducedMotion.matches) {
     { passive: true }
   );
   applyParallax();
+}
+
+// Champ « accompagnants » affiché dès qu'on vient à plusieurs
+const guestsInput = document.getElementById('guests');
+const companionsRow = document.getElementById('companions-row');
+function updateCompanionsRow() {
+  if (guestsInput && companionsRow) {
+    companionsRow.hidden = !(parseInt(guestsInput.value, 10) > 1);
+  }
+}
+if (guestsInput) {
+  guestsInput.addEventListener('input', updateCompanionsRow);
+  updateCompanionsRow();
 }
 
 // La soumission du formulaire RSVP est gérée par @formspree/ajax (voir index.html)

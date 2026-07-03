@@ -5,6 +5,16 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Mathilde & Guillaume — 22 août 2026</title>
 <meta name="description" content="Mathilde et Guillaume se marient le 22 août 2026. Découvrez le programme et confirmez votre présence.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Mathilde & Guillaume — 22 août 2026">
+<meta property="og:description" content="Nous nous marions le 22 août 2026 à Eygurande-et-Gardedeuil, en Dordogne. Programme, infos pratiques et RSVP.">
+<meta property="og:url" content="https://save-the-date-one-eta.vercel.app/">
+<meta property="og:image" content="https://save-the-date-one-eta.vercel.app/assets/og-image.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="fr_FR">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
 <link rel="preload" href="assets/fonts/mrs-saint-delafield-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="assets/fonts/montserrat-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="css/style.css">
@@ -16,7 +26,11 @@
 <header class="hero" id="accueil">
   <nav class="nav">
     <span class="nav-logo">M &amp; G</span>
-    <div class="nav-links">
+    <button class="nav-toggle" type="button" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="nav-menu">
+      <span></span>
+      <span></span>
+    </button>
+    <div class="nav-links" id="nav-menu">
       <a href="#programme">Programme</a>
       <a href="#infos">Infos</a>
       <a href="#rsvp" class="nav-cta">RSVP</a>
@@ -71,6 +85,7 @@
       </div>
     </div>
     <p class="countdown-done" id="countdown-done" hidden>C'est aujourd'hui !</p>
+    <a class="btn-outline" href="assets/mariage-mathilde-et-guillaume.ics" download>Ajouter au calendrier</a>
   </section>
 
   <div class="photo-strip" aria-hidden="true">
@@ -152,6 +167,12 @@
         referrerpolicy="no-referrer-when-downgrade">
       </iframe>
     </div>
+
+    <p class="map-links">
+      <a href="https://www.google.com/maps/dir/?api=1&destination=292+chemin+de+la+petite+duche,+24700+Eygurande-et-Gardedeuil" target="_blank" rel="noopener">Itinéraire Google Maps</a>
+      <span aria-hidden="true">·</span>
+      <a href="https://waze.com/ul?q=292+chemin+de+la+petite+duche+24700+Eygurande-et-Gardedeuil&navigate=yes" target="_blank" rel="noopener">Ouvrir dans Waze</a>
+    </p>
   </section>
 
   <section class="divider" aria-hidden="true">
@@ -197,6 +218,11 @@
       <div class="form-row">
         <label for="guests">Nombre de personnes (vous compris)</label>
         <input type="number" id="guests" name="guests" data-fs-field min="1" max="10" value="1">
+      </div>
+
+      <div class="form-row" id="companions-row" hidden>
+        <label for="companions">Noms des accompagnants</label>
+        <input type="text" id="companions" name="companions" data-fs-field placeholder="Prénoms et noms">
       </div>
 
       <div class="form-row">
