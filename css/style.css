@@ -126,7 +126,7 @@ section {
   content: '';
   position: absolute;
   inset: 0;
-  background: url('../assets/couple-field.jpg') center 38% / cover no-repeat;
+  background: url('../assets/couple-field.jpg') center 64% / cover no-repeat;
   animation: slow-zoom 9s ease-out both;
   z-index: 0;
 }
