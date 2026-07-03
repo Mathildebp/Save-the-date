@@ -160,9 +160,11 @@ section {
 }
 
 .nav-logo {
-  font-family: var(--font-script);
-  font-size: 1.9rem;
-  line-height: 1;
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  font-weight: 500;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
   color: var(--cream);
   transition: color 0.35s ease;
 }
@@ -364,7 +366,7 @@ section {
   height: calc(100% + 80px);
   margin-top: -40px;
   object-fit: cover;
-  object-position: center 30%;
+  object-position: center 56%;
   display: block;
   will-change: transform;
 }
