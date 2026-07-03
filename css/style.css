@@ -107,6 +107,17 @@ section {
   opacity: 0.8;
 }
 
+.script-heading.reveal::after {
+  transform: scaleX(0);
+  opacity: 0;
+}
+
+.script-heading.reveal.is-visible::after {
+  transform: scaleX(1);
+  opacity: 0.8;
+  transition: transform 0.9s ease 0.4s, opacity 0.9s ease 0.4s;
+}
+
 /* ---------- Hero ---------- */
 
 .hero {
@@ -181,6 +192,27 @@ section {
 .nav-links a {
   color: rgba(250, 248, 243, 0.85);
   transition: color 0.2s ease, border-color 0.35s ease;
+}
+
+.nav-links a:not(.nav-cta) {
+  position: relative;
+}
+
+.nav-links a:not(.nav-cta)::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -5px;
+  height: 1px;
+  background: currentColor;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s ease;
+}
+
+.nav-links a:not(.nav-cta):hover::after {
+  transform: scaleX(1);
 }
 
 .nav-links a:hover {
@@ -423,6 +455,21 @@ section {
   border-radius: 16px;
   box-shadow: var(--glass-shadow);
   min-width: 90px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.time-block:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 14px 36px rgba(46, 44, 40, 0.1);
+}
+
+.time-value.tick {
+  animation: tick 0.5s ease;
+}
+
+@keyframes tick {
+  0% { opacity: 0.15; transform: translateY(-8px); }
+  100% { opacity: 1; transform: translateY(0); }
 }
 
 .time-value {
@@ -479,7 +526,26 @@ section {
   margin: 0 auto;
   text-align: left;
   padding-left: 28px;
-  border-left: 2px solid var(--sand);
+}
+
+.timeline::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 2px;
+  background: var(--sand);
+  transform-origin: top;
+}
+
+.timeline.reveal::before {
+  transform: scaleY(0);
+}
+
+.timeline.reveal.is-visible::before {
+  transform: scaleY(1);
+  transition: transform 1.4s ease 0.2s;
 }
 
 .timeline-item {
@@ -615,6 +681,11 @@ section {
   height: 360px;
   object-fit: cover;
   display: block;
+  transition: transform 0.7s ease;
+}
+
+.venue-photo:hover img {
+  transform: scale(1.035);
 }
 
 .venue-photo figcaption {

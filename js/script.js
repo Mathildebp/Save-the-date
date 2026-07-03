@@ -21,10 +21,20 @@ function updateCountdown() {
 
   const pad = (n) => String(n).padStart(2, '0');
 
-  document.getElementById('cd-days').textContent = pad(days);
-  document.getElementById('cd-hours').textContent = pad(hours);
-  document.getElementById('cd-minutes').textContent = pad(minutes);
-  document.getElementById('cd-seconds').textContent = pad(seconds);
+  setTimeValue('cd-days', pad(days));
+  setTimeValue('cd-hours', pad(hours));
+  setTimeValue('cd-minutes', pad(minutes));
+  setTimeValue('cd-seconds', pad(seconds));
+}
+
+// Met à jour un chiffre du compte à rebours avec une petite chute en fondu
+function setTimeValue(id, value) {
+  const el = document.getElementById(id);
+  if (!el || el.textContent === value) return;
+  el.textContent = value;
+  el.classList.remove('tick');
+  void el.offsetWidth;
+  el.classList.add('tick');
 }
 
 updateCountdown();
@@ -61,7 +71,7 @@ if (nav && navToggle) {
 
 // Apparition au scroll, en cascade au sein de chaque groupe
 const revealTargets = document.querySelectorAll(
-  '.time-block, .timeline-item, .info-card, .venue-photo, .map-wrap, .rsvp-form'
+  '.section-eyebrow, .script-heading, .time-block, .btn-outline, .photo-strip, .timeline, .timeline-item, .info-card, .venue-photo, .map-wrap, .map-links, .rsvp-form'
 );
 const revealGroups = new Map();
 revealTargets.forEach((el) => {
