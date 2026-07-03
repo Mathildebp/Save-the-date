@@ -755,18 +755,23 @@ section {
   box-shadow: var(--glass-shadow);
 }
 
+.form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0 20px;
+}
+
 .form-row {
-  margin-bottom: 32px;
+  margin-bottom: 28px;
 }
 
 .form-row label {
   display: block;
-  font-size: 0.72rem;
+  font-size: 0.88rem;
   font-weight: 400;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  margin-bottom: 12px;
-  color: var(--charcoal-soft);
+  letter-spacing: 0.02em;
+  margin-bottom: 10px;
+  color: var(--charcoal);
 }
 
 .form-row input[type="text"],
@@ -774,38 +779,50 @@ section {
 .form-row input[type="number"],
 .form-row textarea {
   width: 100%;
-  padding: 10px 0;
-  border: none;
-  border-bottom: 1px solid var(--sand);
-  border-radius: 0;
-  background: transparent;
+  padding: 13px 15px;
+  border: 1px solid var(--sand);
+  border-radius: 4px;
+  background: rgba(255, 255, 255, 0.55);
   font-family: var(--font-body);
   font-size: 0.95rem;
   color: var(--charcoal);
-  transition: border-color 0.2s ease;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+}
+
+.form-row input::placeholder,
+.form-row textarea::placeholder {
+  color: rgba(107, 104, 98, 0.55);
 }
 
 .form-row textarea {
   resize: vertical;
-  min-height: 80px;
+  min-height: 96px;
 }
 
 .form-row input:focus,
 .form-row textarea:focus {
   outline: none;
   border-color: var(--terracotta-dark);
+  background: #fff;
+  box-shadow: 0 0 0 3px rgba(95, 110, 86, 0.14);
 }
 
 .radio-group {
   display: flex;
-  flex-direction: row;
-  gap: 12px;
-  flex-wrap: wrap;
+  border: 1px solid var(--sand);
+  border-radius: 4px;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.55);
 }
 
 .radio-option {
   position: relative;
   cursor: pointer;
+  flex: 1;
+}
+
+.radio-option + .radio-option {
+  border-left: 1px solid var(--sand);
 }
 
 .radio-option input {
@@ -817,11 +834,10 @@ section {
 
 .radio-option span {
   display: block;
-  padding: 10px 24px;
-  border: 1px solid var(--sand);
-  border-radius: 2px;
+  padding: 12px 10px;
+  text-align: center;
   font-size: 0.8rem;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
   color: var(--charcoal-soft);
   transition: all 0.2s ease;
@@ -829,18 +845,76 @@ section {
 
 .radio-option input:checked + span {
   background: var(--terracotta-dark);
-  border-color: var(--terracotta-dark);
   color: var(--cream);
 }
 
+.radio-option input:focus-visible + span {
+  box-shadow: inset 0 0 0 2px rgba(95, 110, 86, 0.4);
+}
+
 .radio-option span:hover {
-  border-color: var(--terracotta-dark);
+  background: var(--cream-dark);
+  color: var(--charcoal);
+}
+
+.radio-option input:checked + span:hover {
+  background: var(--terracotta-dark);
+  color: var(--cream);
+}
+
+.stepper {
+  display: flex;
+  align-items: stretch;
+  width: 170px;
+  border: 1px solid var(--sand);
+  border-radius: 4px;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.55);
+}
+
+.stepper-btn {
+  width: 46px;
+  border: none;
+  background: transparent;
+  font-family: var(--font-body);
+  font-size: 1.15rem;
+  font-weight: 300;
   color: var(--terracotta-dark);
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.stepper-btn:hover {
+  background: var(--cream-dark);
+}
+
+.stepper input[type="number"] {
+  flex: 1;
+  min-width: 0;
+  text-align: center;
+  border: none;
+  border-radius: 0;
+  background: transparent;
+  -moz-appearance: textfield;
+  appearance: textfield;
+}
+
+.stepper input[type="number"]:focus {
+  box-shadow: none;
+  background: #fff;
+}
+
+.stepper input::-webkit-outer-spin-button,
+.stepper input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
 }
 
 .rsvp-form .btn-primary {
   width: 100%;
   margin-top: 6px;
+  padding: 16px 42px;
+  border-radius: 4px;
   background: var(--terracotta-dark);
   border-color: var(--terracotta-dark);
   color: var(--cream);
@@ -896,7 +970,7 @@ section {
 
 .form-row input[aria-invalid='true'],
 .form-row textarea[aria-invalid='true'] {
-  border-bottom-color: var(--terracotta-dark);
+  border-color: var(--terracotta-dark);
 }
 
 /* ---------- Footer ---------- */
@@ -987,7 +1061,11 @@ section {
   }
 
   section {
-    padding: 64px 18px;
+    padding: 72px 18px;
+  }
+
+  .form-grid {
+    grid-template-columns: 1fr;
   }
 
   .timeline {

@@ -125,6 +125,20 @@ if (stripImg && !reducedMotion.matches) {
   applyParallax();
 }
 
+// Compteur +/− du nombre de personnes
+document.querySelectorAll('.stepper-btn').forEach((btn) => {
+  btn.addEventListener('click', () => {
+    const input = btn.parentElement.querySelector('input[type="number"]');
+    if (!input) return;
+    const min = parseInt(input.min, 10) || 1;
+    const max = parseInt(input.max, 10) || 99;
+    const current = parseInt(input.value, 10) || min;
+    const next = Math.min(max, Math.max(min, current + Number(btn.dataset.step)));
+    input.value = next;
+    input.dispatchEvent(new Event('input', { bubbles: true }));
+  });
+});
+
 // Champ « accompagnants » affiché dès qu'on vient à plusieurs
 const guestsInput = document.getElementById('guests');
 const companionsRow = document.getElementById('companions-row');

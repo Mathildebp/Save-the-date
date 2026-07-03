@@ -180,16 +180,18 @@
     <form id="rsvp-form" class="rsvp-form" action="https://formspree.io/f/xykqwevr" method="POST">
       <div class="form-error-banner" data-fs-error></div>
 
-      <div class="form-row">
-        <label for="name">Nom et prénom</label>
-        <input type="text" id="name" name="name" data-fs-field autocomplete="name" required>
-        <span class="field-error" data-fs-error="name"></span>
-      </div>
+      <div class="form-grid">
+        <div class="form-row">
+          <label for="name">Nom et prénom</label>
+          <input type="text" id="name" name="name" data-fs-field autocomplete="name" required>
+          <span class="field-error" data-fs-error="name"></span>
+        </div>
 
-      <div class="form-row">
-        <label for="email">Adresse email</label>
-        <input type="email" id="email" name="email" data-fs-field autocomplete="email" required>
-        <span class="field-error" data-fs-error="email"></span>
+        <div class="form-row">
+          <label for="email">Adresse email</label>
+          <input type="email" id="email" name="email" data-fs-field autocomplete="email" required>
+          <span class="field-error" data-fs-error="email"></span>
+        </div>
       </div>
 
       <div class="form-row">
@@ -209,7 +211,11 @@
 
       <div class="form-row">
         <label for="guests">Nombre de personnes (vous compris)</label>
-        <input type="number" id="guests" name="guests" data-fs-field min="1" max="10" value="1">
+        <div class="stepper">
+          <button type="button" class="stepper-btn" data-step="-1" aria-label="Une personne de moins">−</button>
+          <input type="number" id="guests" name="guests" data-fs-field min="1" max="10" value="1" inputmode="numeric">
+          <button type="button" class="stepper-btn" data-step="1" aria-label="Une personne de plus">+</button>
+        </div>
       </div>
 
       <div class="form-row" id="companions-row" hidden>
