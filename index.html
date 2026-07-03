@@ -5,14 +5,12 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Mathilde & Guillaume — 22 août 2026</title>
 <meta name="description" content="Mathilde et Guillaume se marient le 22 août 2026. Découvrez le programme et confirmez votre présence.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Parisienne&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="preload" href="assets/fonts/mrs-saint-delafield-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/fonts/montserrat-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
-<div class="bg-photo" aria-hidden="true"></div>
 <div class="bg-texture"></div>
 
 <header class="hero" id="accueil">
@@ -27,7 +25,7 @@
 
   <div class="hero-content">
     <p class="eyebrow">Nous nous marions</p>
-    <h1 class="names">Mathilde <span class="amp">&amp;</span> Guillaume</h1>
+    <h1 class="names">Mathilde <span class="amp">et</span> Guillaume</h1>
     <p class="hero-date">22 août 2026</p>
     <p class="hero-place">Eygurande-et-Gardedeuil, Dordogne</p>
     <span class="hero-divider" aria-hidden="true"></span>
@@ -47,16 +45,13 @@
     </svg>
   </div>
 
-  <a href="#compte-a-rebours" class="scroll-cue" aria-label="Défiler vers le bas">
-    <span></span>
-  </a>
 </header>
 
 <main>
 
   <section class="countdown" id="compte-a-rebours">
-    <p class="section-eyebrow">À vos agendas</p>
-    <h2 class="script-heading">Le grand jour approche</h2>
+    <p class="section-eyebrow">22 août 2026</p>
+    <h2 class="script-heading">Compte à rebours</h2>
     <div class="countdown-timer" id="countdown-timer">
       <div class="time-block">
         <span class="time-value" id="cd-days">00</span>
@@ -75,12 +70,11 @@
         <span class="time-label">secondes</span>
       </div>
     </div>
-    <p class="countdown-done" id="countdown-done" hidden>C'est aujourd'hui — on se marie !</p>
+    <p class="countdown-done" id="countdown-done" hidden>C'est aujourd'hui !</p>
   </section>
 
   <div class="photo-strip" aria-hidden="true">
     <img src="assets/couple-hands.jpg" alt="" loading="lazy">
-    <p class="photo-strip-caption">À l'amour, à la vie</p>
   </div>
 
   <section class="programme" id="programme">
@@ -109,7 +103,7 @@
         <div class="timeline-dot" aria-hidden="true"></div>
         <div class="timeline-content">
           <h3>Soirée dansante</h3>
-          <p>Jusqu'au bout de la nuit</p>
+          <p>À la maison</p>
         </div>
       </div>
     </div>
@@ -123,7 +117,7 @@
   </section>
 
   <section class="infos" id="infos">
-    <p class="section-eyebrow">Tout ce qu'il faut savoir</p>
+    <p class="section-eyebrow">Lieu, accès &amp; hébergement</p>
     <h2 class="script-heading">Infos pratiques</h2>
 
     <div class="infos-grid">
@@ -147,7 +141,7 @@
 
     <figure class="venue-photo">
       <img src="assets/maison.jpg" alt="La maison où aura lieu la réception, à Eygurande-et-Gardedeuil" loading="lazy">
-      <figcaption>Notre maison, là où tout se passera</figcaption>
+      <figcaption>La maison, à Eygurande-et-Gardedeuil</figcaption>
     </figure>
 
     <div class="map-wrap">
@@ -167,9 +161,8 @@
   </section>
 
   <section class="rsvp" id="rsvp">
-    <p class="section-eyebrow">Votre réponse compte pour nous</p>
+    <p class="section-eyebrow">Réponse souhaitée avant le 1er juillet 2026</p>
     <h2 class="script-heading">RSVP</h2>
-    <p class="rsvp-intro">Merci de confirmer votre présence avant le 1er juillet 2026</p>
 
     <form id="rsvp-form" class="rsvp-form" action="https://formspree.io/f/xykqwevr" method="POST">
       <div class="form-error-banner" data-fs-error></div>
@@ -220,14 +213,14 @@
 
       <button type="submit" class="btn-primary" data-fs-submit-btn>Envoyer ma réponse</button>
 
-      <p class="form-success" data-fs-success>Merci infiniment, votre réponse a bien été envoyée !</p>
+      <p class="form-success" data-fs-success>Votre réponse a bien été envoyée, merci.</p>
     </form>
   </section>
 
 </main>
 
 <footer class="footer">
-  <p class="footer-names">Mathilde &amp; Guillaume</p>
+  <p class="footer-names">Mathilde et Guillaume</p>
   <p class="footer-date">22 . 08 . 2026</p>
 </footer>
 
