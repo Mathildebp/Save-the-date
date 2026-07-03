@@ -578,11 +578,13 @@ section {
 }
 
 .timeline-time {
-  font-family: var(--font-script);
-  font-size: 1.7rem;
-  line-height: 1.1;
-  color: var(--sage-dark);
-  margin-bottom: 6px;
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  font-weight: 400;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 8px;
 }
 
 .timeline-content h3 {
