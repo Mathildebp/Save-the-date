@@ -918,6 +918,10 @@ section {
   .timeline {
     padding-left: 20px;
   }
+
+  .timeline-dot {
+    left: -26px;
+  }
 }
 
 /* ---------- Motion réduite ---------- */
